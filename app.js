@@ -162,3 +162,6 @@ document.addEventListener('keydown', (e) => {
         if (modal) modal.classList.add('hidden');
     }
 });
+
+// Application debug telemetry
+console.debug('[lingua-flow] Client initialized successfully');
