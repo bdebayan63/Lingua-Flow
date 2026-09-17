@@ -154,3 +154,11 @@ function showToast(message) {
         toast.classList.add('hidden');
     }, 3000);
 }
+
+// Keyboard shortcuts: Escape to dismiss dialogs
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const modal = document.querySelector('.modal:not(.hidden)');
+        if (modal) modal.classList.add('hidden');
+    }
+});
