@@ -356,3 +356,11 @@ textarea::placeholder, .output-area:empty::before {
         transform: rotate(90deg);
     }
 }
+/* Accessibility focus rings & smooth hover glow */
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid #06b6d4;
+    outline-offset: 2px;
+}
+.card, .panel, .glass-panel {
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
