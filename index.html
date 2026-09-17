@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lingua Flow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <i data-lucide="languages" class="logo-icon"></i>
+            <h1>Lingua Flow</h1>
+        </div>
+        <button id="settings-btn" class="icon-btn"><i data-lucide="settings"></i></button>
+    </header>
+
+    <main class="container">
+        <div class="translator-container">
+            <div class="panel source-panel">
+                <div class="panel-header">
+                    <select id="source-lang">
+                        <option value="auto">Auto-detect</option>
+                        <option value="English">English</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="French">French</option>
+                        <option value="German">German</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Arabic">Arabic</option>
+                        <option value="Portuguese">Portuguese</option>
+                        <option value="Korean">Korean</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Russian">Russian</option>
+                        <option value="Turkish">Turkish</option>
+                    </select>
+                </div>
+                <div class="panel-body">
+                    <textarea id="source-text" placeholder="Enter text to translate..."></textarea>
+                    <div class="panel-footer">
+                        <span id="char-count">0 characters</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swap-container">
+                <button id="swap-btn" class="icon-btn swap-btn"><i data-lucide="arrow-left-right"></i></button>
+            </div>
+
+            <div class="panel target-panel">
+                <div class="panel-header">
+                    <select id="target-lang">
+                        <option value="English">English</option>
+</body>
+</html>
