@@ -33,6 +33,56 @@ swapBtn.addEventListener('click', swapLanguages);
 translateBtn.addEventListener('click', handleTranslate);
 copyBtn.addEventListener('click', copyTranslation);
 
+// Speech Synthesis Pronunciation
+const speakBtn = document.getElementById('speak-btn');
+if (speakBtn) {
+    speakBtn.addEventListener('click', () => {
+        const text = targetText.textContent.trim();
+        if (!text || text === 'Translation will appear here...') {
+            showToast('No translation available to pronounce');
+            return;
+        }
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            const langMap = {
+                'English': 'en-US',
+                'Spanish': 'es-ES',
+                'French': 'fr-FR',
+                'German': 'de-DE',
+                'Hindi': 'hi-IN',
+                'Japanese': 'ja-JP',
+                'Chinese': 'zh-CN',
+                'Arabic': 'ar-SA',
+                'Portuguese': 'pt-PT',
+                'Korean': 'ko-KR',
+                'Italian': 'it-IT',
+                'Russian': 'ru-RU',
+                'Turkish': 'tr-TR'
+            };
+            if (langMap[targetLang.value]) {
+                utterance.lang = langMap[targetLang.value];
+            }
+            window.speechSynthesis.speak(utterance);
+            showToast('Playing audio pronunciation...');
+        } else {
+            showToast('Speech synthesis not supported in this browser');
+        }
+    });
+}
+
+// Quick Phrase Chips
+document.querySelectorAll('.phrase-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const phrase = btn.getAttribute('data-phrase');
+        if (phrase) {
+            sourceText.value = phrase;
+            updateCharCount();
+            sourceText.focus();
+        }
+    });
+});
+
 // Settings Events
 settingsBtn.addEventListener('click', () => settingsModal.classList.remove('hidden'));
 closeSettings.addEventListener('click', () => settingsModal.classList.add('hidden'));
